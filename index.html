@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>SAP Inside Track Belgium - UI5 Libraries</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/custom.css">
+		<link rel="stylesheet" href="css/theme/custom.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+<!--F for fullscreen-->
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section >
+					<p class="fragment ">Do you recognize the background?</p>
+				</section>
+				<section data-background-image="images/bazinga.png">
+				</section>
+				<section >
+					<h1>UI5 Libraries</h1>
+					<p>
+						<small>Created by Wouter Lemaire</small>
+					</p>
+				</section>
+				<section>
+					<h2>Agenda</h2>
+					<ul>
+						<li>Introduction</li>
+						<li>Create a custom control</li>
+						<li>Wrap a control into a Library</li>
+						<li>Consume a Library</li>
+						<li>UI5Lab</li>
+						<li>QA</li>
+					</ul>
+				</section>
+				<section>
+					<section>
+						<h2>Introductie</h2>
+						<p>Wouter Lemaire</p>
+						<p>Brussels</p>
+						<p>SAP Developer/Architect Consultant</p>
+						<p>SAP Mentor</p>
+						<p>ABAP - SAP Gateway - UI5 - Fiori</p>
+					</section>
+					<section>
+						<img src="images/flexso.png"/>
+						<p>Belgium</p>
+						<p>SAP Consulting Company</p>
+						<p>SAP Support Team</p>
+						<p>SAP Partner</p>
+					</section>
+				</section>
+				<section>
+					<h2>Create a custom control</h2>
+					<p><a href="https://blogs.sap.com/2016/11/27/custom-ui5-control-generator-sap-web-ide-plugin/">Control generator</a></p>
+					<p><b>Demo</b></p>
+				</section>
+				<section>
+					<section>
+						<h2>Wrap a control into a Library</h2>
+						<p><a href="https://blogs.sap.com/2018/03/02/create-your-own-ui5-library-for-ui5lab/">Create Library</a></p>
+						<p><a href="https://blogs.sap.com/2018/03/08/sap-web-ide-ui5-library-template-for-ui5lab/">SAP Web IDE template</a></p>
+						<p><b>Demo</b></p>
+					</section>
+					<section>
+						<h2>Wrap a control into a Library - Demo</h2>
+						<ul>
+							<li><p>Generate Library</p></li>
+							<li><p>Copy Control</p></li>
+							<li><p>Copy Control renderer</p></li>
+							<li><p>Copy css</p></li>
+							<li><p>Copy images</p></li>
+							<li><p>Change test case</p></li>
+							<li><p>Add image to test case</p></li>
+							<li><p>Build</p></li>
+							<li><p>Run test</p></li>
+							<li><p>Deploy</p></li>
+						</ul>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+						<h2>Test case update</h2>
+						
+						```
+							var oSpace = new be.sit.wl.Space({
+								intro:"Example control",
+								title:"Title demo",
+								text:"test",
+								logo:"./test-resources-webide/be/sit/wl/images/Logo_SITBRU.png"
+							});
+						```
+						</script>
+					</section>
+				</section>
+				<section>
+					<img src="images/knockknock.jpg"/>
+				</section>
+				<section>
+					<section>
+						<h2>Consume a Library</h2>
+						<p><a href="https://blogs.sap.com/2018/04/06/consume-libraries-from-ui5lab/">Consume a Library</a></p>
+						<p><b>Demo</b></p>
+					</section>
+					<section>
+						<h2>Consume a Library - Demo</h2>
+						<ul>
+							<li><p>Create a new app</p></li>
+							<li><p>Map library path to Library in neo-app.json</p></li>
+						</ul>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+						<h2>neo-app.json</h2>
+						
+						```
+							{
+							  "path": "/resources/be/sit/wl",
+							  "target": {
+								"type": "application",
+								"name": "sitbelgiumlib",
+								"entryPath": "/"
+							  },
+							  "description": "UI5Lab Space Library"
+							}
+						```
+						</script>
+					</section>
+					<section>
+						<h2>Consume a Library - Demo</h2>
+						<ul>
+							<li><p>Add library to manifest.json</p></li>
+							<li><p>Use library in a view</p></li>
+						</ul>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+						<h2>view</h2>
+						
+						```
+							xmlns:wl="be.sit.wl"
+							
+							<wl:Space 
+								intro="Hello all !" 
+								logo="http://openui5.org/resources/OpenUI5_newlogo_orange_only.png" 
+								title="Welcome to UI5Lab"
+								text="This blog helps you consuming libraries from UI5Lab."/>
+						```
+						</script>
+					</section>
+				</section>
+				<section>
+						<h2>UI5Lab</h2>
+						<p><a href="https://ui5lab.io/">https://ui5lab.io/</a></p>
+				</section>
+				<section style="text-align: left;">
+					<h1>Any Questions?</h1>
+					<p>
+					</p>
+				</section>
+
+				<section>
+					<img src="images/sheldonend.jpg"/>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				slideNumber:'c/t',
+				transition: 'convex',//'slide', // none/fade/slide/convex/concave/zoom
+				parallaxBackgroundImage:'images/bigbang.jpg',
+				// parallaxBackgroundSize:'1900px',
+				// viewDistance: 10,
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
